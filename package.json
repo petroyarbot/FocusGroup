@@ -1,0 +1,11 @@
+{
+  "name": "focusgroup-miniapp",
+  "version": "1.0.0",
+  "description": "Telegram mini app for focus tracking and room competitions",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check src/store.js && node --check public/app.js"
+  }
+}

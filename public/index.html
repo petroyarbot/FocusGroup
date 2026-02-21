@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>focus0s</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="glass topbar">
+        <div class="brand">focus0s</div>
+        <button id="profileBtn" class="user-pill">
+          <span id="userName">User</span>
+          <span class="avatar">◉</span>
+        </button>
+      </header>
+
+      <section class="glass panel active" data-panel="focus">
+        <h1>Фокус</h1>
+
+        <div class="kpi-row">
+          <button class="chip" id="themeToggle">Свет / Тьма</button>
+          <article class="glass kpi">
+            <small>сегодня</small>
+            <strong id="kpiToday">—</strong>
+          </article>
+          <article class="glass kpi">
+            <small>за неделю</small>
+            <strong id="kpiWeek">—</strong>
+          </article>
+        </div>
+
+        <div class="glass input-row">
+          <label for="newActivity">над чем работаем?</label>
+          <div class="row-inline">
+            <input id="newActivity" placeholder="например, Deep Work" />
+            <button id="addActivityBtn" class="chip">Добавить</button>
+          </div>
+          <select id="activitySelect"></select>
+        </div>
+
+        <div class="glass mode-row">
+          <select id="roomSelect">
+            <option value="">Личный режим</option>
+          </select>
+          <select id="timerMode">
+            <option value="stopwatch">Секундомер</option>
+            <option value="pomodoro">Pomodoro 25/5</option>
+          </select>
+        </div>
+
+        <div class="arena glass">
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-inner"></div>
+          <button id="startBtn" class="start-core">СТАРТ</button>
+          <div id="timer">00:00:00</div>
+        </div>
+      </section>
+
+      <section class="glass panel" data-panel="music">
+        <h2>Музыка</h2>
+        <p>Раздел-заглушка: сюда можно подключить плейлисты для фокуса.</p>
+      </section>
+
+      <section class="glass panel" data-panel="stats">
+        <h2>Статистика</h2>
+        <select id="periodSelect">
+          <option value="today">Сегодня</option>
+          <option value="week">Неделя</option>
+          <option value="month">Месяц</option>
+          <option value="year">Год</option>
+          <option value="all">За всё время</option>
+        </select>
+        <p id="summary"></p>
+        <ul id="timeline"></ul>
+      </section>
+
+      <section class="glass panel" data-panel="profile">
+        <h2>Комнаты и профиль</h2>
+        <input id="newRoom" placeholder="Название комнаты" />
+        <button id="createRoomBtn">Создать комнату</button>
+        <div class="row-inline">
+          <input id="joinRoomId" placeholder="ID комнаты" />
+          <button id="joinRoomBtn">Вступить</button>
+        </div>
+        <ul id="roomsList"></ul>
+
+        <h3>Лидерборд</h3>
+        <select id="leaderboardRoom"></select>
+        <ul id="leaderboard"></ul>
+        <button id="stopBtn" class="danger">Остановить текущий таймер</button>
+      </section>
+
+      <nav class="glass bottom-nav">
+        <button class="nav-btn active" data-target="focus">Фокус</button>
+        <button class="nav-btn" data-target="music">Музыка</button>
+        <button class="nav-btn" data-target="stats">Статистика</button>
+        <button class="nav-btn" data-target="profile">Профиль</button>
+      </nav>
+    </main>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
